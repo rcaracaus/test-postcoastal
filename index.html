@@ -120,6 +120,49 @@
 
 <div style="display: block; height: 2000px; width: 100px;"></div>
 
+
+<div class="parallax-image">
+  <img src="http://placekitten.com/g/1200/600" alt="kitty" />
+</div>
+<div class="parallax-image">
+  <img src="http://placekitten.com/g/1200/610" alt="kitty" />
+</div>
+<div class="parallax-image">
+  <img src="http://placekitten.com/g/1200/620" alt="kitty" />
+</div>
+<div class="parallax-image">
+  <img src="http://placekitten.com/g/1200/630" alt="kitty" />
+</div>
+<div class="parallax-image">
+  <img src="http://placekitten.com/g/1200/640" alt="kitty" />
+</div>
+<div class="bottom">The End</div>
+
+
+<style>
+
+	.parallax-image {
+	  padding-top: 50%;
+	  position: relative;
+	}
+
+	.parallax-image img {
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: auto;
+	}
+
+	.bottom {
+	  height: 500px;
+	  background: #fff;
+	  position: relative;
+	  z-index: 1;
+	}
+
+</style>
+
 <script>
 jQuery(document).ready(function ($) {
     var pictureCount = $('.animateBuilding').length;
@@ -143,6 +186,26 @@ jQuery(document).ready(function ($) {
     $(window).bind('scroll', function() {
         animateBuilding();
     });
+
+		$(window).scroll(function(){
+	  	// Add parallax scrolling to all images in .paralax-image container
+		  $('.parallax-image').each(function(){
+		    // only put top value if the window scroll has gone beyond the top of the image
+				    if ($(this).offset().top < $(window).scrollTop()) {
+      			// Get ammount of pixels the image is above the top of the window
+      			var difference = $(window).scrollTop() - $(this).offset().top;
+			      // Top value of image is set to half the amount scrolled
+			      // (this gives the illusion of the image scrolling slower than the rest of the page)
+			      var half = (difference / 2) + 'px',
+                transform = 'translate3d( 0, ' + half + ',0)';
+
+			      $(this).find('img').css('transform', transform);
+    		} else {
+			      // if image is below the top of the window set top to 0
+      			$(this).find('img').css('transform', 'translate3d(0,0,0)');
+		    }
+		  });
+		});
 });
 </script>
 
