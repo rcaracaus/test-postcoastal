@@ -1,0 +1,151 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+<script type='text/javascript' src='http://staging.postcoastal.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+<script type='text/javascript' src='http://staging.postcoastal.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+<script type='text/javascript' src='http://staging.postcoastal.com/wp-content/themes/Ignyte/includes/bootstrap/js/bootstrap.min.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://staging.postcoastal.com/wp-content/themes/Ignyte/includes/flexslider/jquery.flexslider.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://staging.postcoastal.com/wp-content/themes/Ignyte/includes/mmenu/jquery.mmenu.all.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://staging.postcoastal.com/wp-content/themes/Ignyte/includes/mmenu/jquery.mmenu.fixedelements.js?ver=4.9.4'></script>
+<script type='text/javascript' src='http://staging.postcoastal.com/wp-content/themes/Ignyte/includes/js/isInViewport.min.js?ver=4.9.4'></script>
+
+<style>
+.animateBuilding { position: absolute; display: none; top: 0; left: 0; width:100vw; height:100vh; background-repeat: no-repeat; background-position:center center; background-size: cover; }
+#home-flyover-container { position: fixed;	}
+
+#sequence00 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence00.jpg"); }
+#sequence01 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence01.jpg"); }
+#sequence02 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence02.jpg"); }
+#sequence03 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence03.jpg"); }
+#sequence04 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence04.jpg"); }
+#sequence05 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence05.jpg"); }
+#sequence07 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence06.jpg"); }
+#sequence08 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence07.jpg"); }
+#sequence09 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence08.jpg"); }
+#sequence10 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence09.jpg"); }
+#sequence11 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence10.jpg"); }
+#sequence12 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence11.jpg"); }
+#sequence13 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence12.jpg"); }
+#sequence14 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence13.jpg"); }
+#sequence15 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence14.jpg"); }
+#sequence16 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence15.jpg"); }
+#sequence17 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence16.jpg"); }
+#sequence18 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence17.jpg"); }
+#sequence19 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence18.jpg"); }
+#sequence20 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence19.jpg"); }
+#sequence21 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence20.jpg"); }
+#sequence22 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence21.jpg"); }
+#sequence23 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence22.jpg"); }
+#sequence24 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence23.jpg"); }
+#sequence25 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence24.jpg"); }
+#sequence26 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence25.jpg"); }
+#sequence27 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence26.jpg"); }
+#sequence28 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence27.jpg"); }
+#sequence29 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence28.jpg"); }
+#sequence30 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence29.jpg"); }
+#sequence31 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence30.jpg"); }
+#sequence32 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence31.jpg"); }
+#sequence33 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence32.jpg"); }
+#sequence34 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence33.jpg"); }
+#sequence35 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence34.jpg"); }
+#sequence36 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence35.jpg"); }
+#sequence37 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence36.jpg"); }
+#sequence38 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence37.jpg"); }
+#sequence39 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence38.jpg"); }
+#sequence40 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence39.jpg"); }
+#sequence41 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence40.jpg"); }
+#sequence42 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence41.jpg"); }
+#sequence43 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence42.jpg"); }
+#sequence44 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence43.jpg"); }
+#sequence45 { background:url("http://staging.postcoastal.com/testing-flyaround/sequence44.jpg"); }
+
+</style>
+
+
+</head>
+
+<body>
+
+<div id="home-flyover-container">
+	<div id="sequence00" class="animateBuilding"></div>
+	<div id="sequence01" class="animateBuilding"></div>
+	<div id="sequence02" class="animateBuilding"></div>
+	<div id="sequence03" class="animateBuilding"></div>
+	<div id="sequence04" class="animateBuilding"></div>
+	<div id="sequence05" class="animateBuilding"></div>
+	<div id="sequence06" class="animateBuilding"></div>
+	<div id="sequence07" class="animateBuilding"></div>
+	<div id="sequence08" class="animateBuilding"></div>
+	<div id="sequence09" class="animateBuilding"></div>
+	<div id="sequence10" class="animateBuilding"></div>
+	<div id="sequence11" class="animateBuilding"></div>
+	<div id="sequence12" class="animateBuilding"></div>
+	<div id="sequence13" class="animateBuilding"></div>
+	<div id="sequence14" class="animateBuilding"></div>
+	<div id="sequence15" class="animateBuilding"></div>
+	<div id="sequence16" class="animateBuilding"></div>
+	<div id="sequence17" class="animateBuilding"></div>
+	<div id="sequence18" class="animateBuilding"></div>
+	<div id="sequence19" class="animateBuilding"></div>
+	<div id="sequence20" class="animateBuilding"></div>
+	<div id="sequence21" class="animateBuilding"></div>
+	<div id="sequence22" class="animateBuilding"></div>
+	<div id="sequence23" class="animateBuilding"></div>
+	<div id="sequence24" class="animateBuilding"></div>
+	<div id="sequence25" class="animateBuilding"></div>
+	<div id="sequence26" class="animateBuilding"></div>
+	<div id="sequence27" class="animateBuilding"></div>
+	<div id="sequence28" class="animateBuilding"></div>
+	<div id="sequence29" class="animateBuilding"></div>
+	<div id="sequence30" class="animateBuilding"></div>
+	<div id="sequence31" class="animateBuilding"></div>
+	<div id="sequence32" class="animateBuilding"></div>
+	<div id="sequence33" class="animateBuilding"></div>
+	<div id="sequence34" class="animateBuilding"></div>
+	<div id="sequence35" class="animateBuilding"></div>
+	<div id="sequence36" class="animateBuilding"></div>
+	<div id="sequence37" class="animateBuilding"></div>
+	<div id="sequence38" class="animateBuilding"></div>
+	<div id="sequence39" class="animateBuilding"></div>
+	<div id="sequence40" class="animateBuilding"></div>
+	<div id="sequence41" class="animateBuilding"></div>
+	<div id="sequence42" class="animateBuilding"></div>
+	<div id="sequence43" class="animateBuilding"></div>
+	<div id="sequence44" class="animateBuilding"></div>
+</div>
+
+<div style="display: block; height: 2000px; width: 100px;"></div>
+
+<script>
+jQuery(document).ready(function ($) {
+    var pictureCount = $('.animateBuilding').length;
+    var scrollResolution = 50;
+
+    animateBuilding();
+
+    function animateBuilding() {
+        var currentScrollPosition = window.pageYOffset;
+        var imageIndex = Math.round(currentScrollPosition / scrollResolution);
+
+        if (imageIndex >= pictureCount) {
+            imageIndex = pictureCount - 1; // Select last image
+        }
+
+        $(".animateBuilding").hide();
+		$(".animateBuilding").eq(imageIndex).css('background-size','cover');
+        $(".animateBuilding").eq(imageIndex).show();
+    }
+
+    $(window).bind('scroll', function() {
+        animateBuilding();
+    });
+});
+</script>
+
+
+</body>
+</html>
